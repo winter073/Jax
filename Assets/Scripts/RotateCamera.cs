@@ -16,7 +16,7 @@ public class RotateCamera : MonoBehaviour
     void Update()
     {        
         // If the player clicks the mouse, the camera moves to the side a fixed distance
-        /*if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             transform.Rotate(0, 45, 0);
         }
@@ -24,7 +24,7 @@ public class RotateCamera : MonoBehaviour
         {
             transform.Rotate(0, -45, 0);
         }
-        */
+        
         transform.position = player.transform.position + CameraOffset; // Move focal point with player
     }
 }
