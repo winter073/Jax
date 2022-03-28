@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody playerRb;
     private GameObject focalPoint;
     public float speed = 500.0f;
+    public float trueJumpSpeed = 5.0f;
 
     //Variables to ensure the player can't jump more that 1 time per face before touching the ground
     private bool posYjump = true;
@@ -22,8 +23,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       playerRb = GetComponent<Rigidbody>();
-       focalPoint = GameObject.Find("Player");
+        playerRb = GetComponent<Rigidbody>();
+        focalPoint = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -36,17 +37,17 @@ public class PlayerController : MonoBehaviour
         //          Camera is rotated using the mouse, and cube is controlled using QWE/ASD
 
         //If player presses a button, then a force will be applied to the opposite direction of the face so the cube moves
-        if (Input.GetKeyDown(KeyCode.W) && posXjump == true) //Press W to move posX
+        if (Input.GetKeyDown(KeyCode.Q) && posXjump == true) //Press Q to move posX
         {
             playerRb.AddForce(transform.right * speed);
             posXjump = false;
         }
-        if (Input.GetKeyDown(KeyCode.Q) && posYjump == true) //Press Q to move posY
+        if (Input.GetKeyDown(KeyCode.W) && posYjump == true) //Press W to move posY
         {
             playerRb.AddForce(transform.up * speed);
             posYjump = false;
         }
-        if (Input.GetKeyDown(KeyCode.E) && posZjump == true) //Press Q to move posZ
+        if (Input.GetKeyDown(KeyCode.E) && posZjump == true) //Press E to move posZ
         {
             playerRb.AddForce(transform.forward * speed);
             posZjump = false;
@@ -61,14 +62,14 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(-transform.up * speed);
             negYjump = false;
         }
-        if (Input.GetKeyDown(KeyCode.D) && negZjump == true) //Press Q to move negZ
+        if (Input.GetKeyDown(KeyCode.D) && negZjump == true) //Press D to move negZ
         {
             playerRb.AddForce(-transform.forward * speed);
             negZjump = false;
         }
         if (Input.GetKeyDown(KeyCode.Space) && trueJump == true) //Press Space to jump vertically no matter the player's orientation
         {
-            playerRb.AddForce(transform.up  * speed);
+            playerRb.velocity = (playerRb.velocity + new Vector3(0, trueJumpSpeed));
             trueJump = false;
         }
     }
