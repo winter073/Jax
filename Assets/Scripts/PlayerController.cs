@@ -72,6 +72,33 @@ public class PlayerController : MonoBehaviour
             playerRb.velocity = (playerRb.velocity + new Vector3(0, trueJumpSpeed));
             trueJump = false;
         }
+
+        //If player holds a button, then the player will rotate either positively or negatively around the chosen axis
+        if (Input.GetKey(KeyCode.R)) //Hold R to rotate positively around the Player's X arm 
+        {
+            transform.Rotate(1, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.F)) //Hold F to rotate negatively around the Player's X arm 
+        {
+            transform.Rotate(-1, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.T)) //Hold T to rotate positively around the Player's Y arm
+        {
+            transform.Rotate(0, 1, 0);
+        }
+        if (Input.GetKey(KeyCode.G)) //Hold G to rotate negatively around the Player's Y arm
+        {
+            transform.Rotate(0, -1, 0);
+        }
+        if (Input.GetKey(KeyCode.Y)) //Hold Y to rotate positively around the Player's Z arm
+        {
+            transform.Rotate(0, 0, 1);
+        }
+        if (Input.GetKey(KeyCode.H)) //Hold H to rotate negatively around the Player's Z arm
+        {
+            transform.Rotate(0, 0, 1);
+        }
+
     }
 
     //Check to see if player collided with a ground object, if so then reset jumps to true
