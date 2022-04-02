@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     private GameObject focalPoint;
     public float speed = 500.0f;
     public float trueJumpSpeed = 5.0f;
+    private AudioSource playerAudio;
+    public AudioClip backgroundMusic;
+    public AudioClip jumpSound;
 
     //Variables to ensure the player can't jump more that 1 time per face before touching the ground
     private bool posYjump = true;
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Player");
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,36 +45,43 @@ public class PlayerController : MonoBehaviour
         {
             playerRb.AddForce(transform.right * speed);
             posXjump = false;
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
         if (Input.GetKeyDown(KeyCode.W) && posYjump == true) //Press W to move posY
         {
             playerRb.AddForce(transform.up * speed);
             posYjump = false;
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
         if (Input.GetKeyDown(KeyCode.E) && posZjump == true) //Press E to move posZ
         {
             playerRb.AddForce(transform.forward * speed);
             posZjump = false;
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
         if (Input.GetKeyDown(KeyCode.A) && negXjump == true) //Press A to move negX
         {
             playerRb.AddForce(-transform.right * speed);
             negXjump = false;
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
         if (Input.GetKeyDown(KeyCode.S) && negYjump == true) //Press S to move negY
         {
             playerRb.AddForce(-transform.up * speed);
             negYjump = false;
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
         if (Input.GetKeyDown(KeyCode.D) && negZjump == true) //Press D to move negZ
         {
             playerRb.AddForce(-transform.forward * speed);
             negZjump = false;
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
         if (Input.GetKeyDown(KeyCode.Space) && trueJump == true) //Press Space to jump vertically no matter the player's orientation
         {
             playerRb.velocity = (playerRb.velocity + new Vector3(0, trueJumpSpeed));
             trueJump = false;
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
 
         //If player holds a button, then the player will rotate either positively or negatively around the chosen axis
