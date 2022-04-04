@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Script for Jax
+//Written by Paul Iradi
 public class RotateCamera : MonoBehaviour
 {
     public GameObject player;

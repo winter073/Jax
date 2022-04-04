@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip backgroundMusic;
     public AudioClip jumpSound;
+    public ParticleSystem explosionParticle;
 
     //Variables to ensure the player can't jump more that 1 time per face before touching the ground
     private bool posYjump = true;
@@ -124,6 +125,16 @@ public class PlayerController : MonoBehaviour
             posZjump = true;
             negZjump = true;
             trueJump = true;
+        }
+    }
+
+    //Check to see if player collided with pickup object, if so then destroy the pickup object and increment the counter by 1
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            explosionParticle.Play();
+            Destroy(other.gameObject);
         }
     }
 
