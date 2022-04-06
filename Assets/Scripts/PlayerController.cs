@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody playerRb;
     private GameObject focalPoint;
+    public GameObject SpawnPlatform;
     public float speed = 500.0f;
     public float trueJumpSpeed = 5.0f;
     private AudioSource playerAudio;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Player");
+        SpawnPlatform = GameObject.Find("Level_Spawn");
         playerAudio = GetComponent<AudioSource>();
     }
 
@@ -40,6 +42,16 @@ public class PlayerController : MonoBehaviour
         //          Player can only jump once per face before needing to touch the ground again to regain their jumps
         //          Universal jump button that makes the player move up no matter what orrientation they are in
         //          Camera is rotated using the mouse, and cube is controlled using QWE/ASD
+
+        //Resets the player's position in the level to the spawn platform when they press backspace
+        if (Input.GetKeyDown(KeyCode.Backspace) && SpawnPlatform != null)
+        {
+            playerRb.velocity = Vector3.zero;
+            playerRb.angularVelocity = Vector3.zero;
+            playerRb.transform.position = SpawnPlatform.transform.position + new Vector3(0, 3, 0);
+            playerRb.transform.eulerAngles = new Vector3(0, 0, 0);
+
+        }
 
         //If player presses a button, then a force will be applied to the opposite direction of the face so the cube moves
         if (Input.GetKeyDown(KeyCode.Q) && posXjump == true) //Press Q to move posX

@@ -9,8 +9,6 @@ public class RotateCamera : MonoBehaviour
     public GameObject player;
     private GameObject focalPoint;
 
-    private Vector3 CameraOffset = new Vector3(0, 10, 10);
-
     private Vector3 cameraAngle = new Vector3(40, 180, 0);
 
     void Start()
@@ -21,17 +19,28 @@ public class RotateCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        // If the player clicks the mouse, the camera moves to the side a fixed distance
-        
-        if (Input.GetMouseButtonDown(0))
+        // Allows the player to rotate the camera to the left and right while keeping the Jax in the center of the screen
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.RotateAround(focalPoint.transform.position, Vector3.up, 45);
+            transform.Rotate(0, 45, 0);
+            
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.Rotate(0, -45, 0);
         }
-        
-        transform.position = player.transform.position + CameraOffset; // Move focal point with player
+
+        //Allows the player to move the camera up and down
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            transform.Rotate(-15, 0, 0);
+
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            transform.Rotate(15, 0, 0);
+        }
+
+        transform.position = player.transform.position; // Move focal point with player
     }
 }
