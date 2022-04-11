@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     public AudioClip backgroundMusic;
     public AudioClip jumpSound;
     public ParticleSystem explosionParticle;
+    private int pickups;
+    public UImanager _uiManager;
+    private bool LevelComplete = true;
 
     //Variables to ensure the player can't jump more that 1 time per face before touching the ground
     private bool posYjump = true;
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
         focalPoint = GameObject.Find("Player");
         SpawnPlatform = GameObject.Find("Level_Spawn");
         playerAudio = GetComponent<AudioSource>();
+        _uiManager = GameObject.Find("Focal Point").GetComponent<UImanager>();
     }
 
     // Update is called once per frame
@@ -145,9 +149,23 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pickup"))
         {
+            AddPickup();
             explosionParticle.Play();
             Destroy(other.gameObject);
+            if (GameObject.FindGameObjectsWithTag("Pickup").Length < 1)
+            {
+                LevelComplete = true;
+            }
+        }
+        if (other.gameObject.CompareTag("Goal") && LevelComplete == true)
+        {
+            Debug.Log("You win!");
         }
     }
 
+    public void AddPickup()
+    {
+        pickups++;
+        _uiManager.updatePickupDisplay(pickups);
+    }
 }
