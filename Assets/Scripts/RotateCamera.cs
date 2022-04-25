@@ -13,34 +13,53 @@ public class RotateCamera : MonoBehaviour
 
     void Start()
     {
-        focalPoint = GameObject.Find("Player");
+        focalPoint = GameObject.Find("Follow Object");
+        focalPoint.transform.rotation = Quaternion.Euler(50, transform.rotation.eulerAngles.y, 0);
     }
 
     // Update is called once per frame
     void Update()
-    {        
-        // Allows the player to rotate the camera to the left and right while keeping the Jax in the center of the screen
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+    {
+
+        //Attempt to lock Axis
+        //transform.position.z=0
+
+        if (focalPoint.transform.rotation.eulerAngles.z != 0)
         {
-            transform.Rotate(0, 45, 0);
+            //focalPoint.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
+
+        }
+
+        // Allows the player to rotate the camera to the left and right while keeping the Jax in the center of the screen
+        if (Input.GetAxis("Mouse X") < 0)
+        {
+            //Code for action on mouse moving left
+            transform.Rotate(0, 1, 0);
             
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetAxis("Mouse X") > 0)
         {
-            transform.Rotate(0, -45, 0);
+            //Code for action on mouse moving right
+            transform.Rotate(0, -1, 0);
         }
 
         //Allows the player to move the camera up and down
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetAxis("Mouse Y") > 0 && focalPoint.transform.rotation.eulerAngles.x < 85)
         {
-            transform.Rotate(-15, 0, 0);
+            //Mouse Up
+            transform.Rotate(1, 0, 0);
+            Debug.Log("LOOK UP");
 
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetAxis("Mouse Y") < 0 && focalPoint.transform.rotation.eulerAngles.x > 10)
         {
-            transform.Rotate(15, 0, 0);
+            //Mouse Down
+            transform.Rotate(-1, 0, 0);
+            Debug.Log("LOOK DOWN");
         }
+        Debug.Log("X: " + focalPoint.transform.rotation.eulerAngles.x);
 
-        transform.position = player.transform.position; // Move focal point with player
+        focalPoint.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
+        //transform.position = player.transform.position; // Move focal point with player
     }
 }
