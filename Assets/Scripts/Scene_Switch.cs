@@ -8,6 +8,6 @@ public class Scene_Switch : MonoBehaviour
     // Switches to the next level/scene
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Skatepark_V1");
     }
 }
