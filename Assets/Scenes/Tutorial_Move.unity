@@ -13748,7 +13748,7 @@ GameObject:
   - component: {fileID: 1793251734}
   m_Layer: 0
   m_Name: Level_Change
-  m_TagString: Ground
+  m_TagString: SceneSwitch1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
