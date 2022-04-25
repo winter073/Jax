@@ -152,8 +152,9 @@ public class PlayerController : MonoBehaviour
             AddPickup();
             explosionParticle.Play();
             Destroy(other.gameObject);
-            if (GameObject.FindGameObjectsWithTag("Pickup").Length < 1)
+            if (GameObject.FindGameObjectsWithTag("Pickup").Length <= 4)
             {
+                Destroy (GameObject.FindWithTag("Door"));
                 LevelComplete = true;
             }
         }

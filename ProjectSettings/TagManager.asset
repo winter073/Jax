@@ -8,6 +8,9 @@ TagManager:
   - Pickup
   - SpawnPlatform
   - Goal
+  - Door
+  - SceneSwitch1
+  - SceneSwitch2
   layers:
   - Default
   - TransparentFX
