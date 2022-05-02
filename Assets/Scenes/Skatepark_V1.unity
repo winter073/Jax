@@ -6744,6 +6744,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 305344693}
     m_Modifications:
+    - target: {fileID: 3624846904296964308, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3624846904296964312, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -6820,7 +6824,8 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3624846904296964319, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
 --- !u!1 &166329113
 GameObject:
@@ -7195,7 +7200,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-240960
+  m_Name: pb_Mesh-14924
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12682,6 +12687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 305344693}
     m_Modifications:
+    - target: {fileID: 3624846904296964308, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3624846904296964312, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -12758,7 +12767,8 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3624846904296964319, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
 --- !u!1 &370150913
 GameObject:
@@ -22721,7 +22731,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-240082
+  m_Name: pb_Mesh-14046
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34840,6 +34850,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1777592627}
     m_Modifications:
+    - target: {fileID: 3624846904296964308, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3624846904296964312, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -34920,7 +34934,8 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3624846904296964319, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
 --- !u!4 &1041356007 stripped
 Transform:
@@ -35604,7 +35619,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3624846904296964308, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
       propertyPath: m_UseGravity
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3624846904296964312, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
       propertyPath: m_Mesh
@@ -35686,7 +35701,8 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3624846904296964319, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
 --- !u!4 &1092659746 stripped
 Transform:
@@ -50855,7 +50871,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-204648
+  m_Name: pb_Mesh-14342
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -53790,6 +53806,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 305344693}
     m_Modifications:
+    - target: {fileID: 3624846904296964308, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3624846904296964312, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -53866,7 +53886,8 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3624846904296964319, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b312ff8ff7444154ea182f027a3ba92d, type: 3}
 --- !u!1 &1598184106
 GameObject:
@@ -71839,7 +71860,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-240366
+  m_Name: pb_Mesh-14330
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -72480,7 +72501,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-240150
+  m_Name: pb_Mesh-14114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
