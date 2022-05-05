@@ -11,6 +11,9 @@ public class Scene_Switch2 : MonoBehaviour
     // Switches to the next level/scene
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Skatepark_V1");
+        if (other.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("Skatepark_V1");
+        }
     }
 }

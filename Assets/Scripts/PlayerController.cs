@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.H)) //Hold H to rotate negatively around the Player's Z arm
         {
-            transform.Rotate(0, 0, 1);
+            transform.Rotate(0, 0, -1);
         }
 
     }
