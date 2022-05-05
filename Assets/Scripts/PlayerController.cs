@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Check to see if player collided with pickup object, if so then destroy the pickup object and increment the counter by 1
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Pickup"))
         {
@@ -154,8 +154,11 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             if (GameObject.FindGameObjectsWithTag("Pickup").Length <= 4)
             {
+                if (GameObject.FindGameObjectsWithTag("Pickup").Length == 5)
+                {
+                    LevelComplete = true;
+                }
                 Destroy (GameObject.FindWithTag("Door"));
-                LevelComplete = true;
             }
         }
         if (other.gameObject.CompareTag("Goal") && LevelComplete == true)
