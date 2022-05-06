@@ -13,7 +13,7 @@ public class RotateCamera : MonoBehaviour
 
     void Start()
     {
-        focalPoint = GameObject.Find("Follow Object");
+        focalPoint = GameObject.Find("Focal Point");
         focalPoint.transform.rotation = Quaternion.Euler(50, transform.rotation.eulerAngles.y, 0);
     }
 
@@ -57,9 +57,9 @@ public class RotateCamera : MonoBehaviour
             transform.Rotate(-1, 0, 0);
             Debug.Log("LOOK DOWN");
         }
-        Debug.Log("X: " + focalPoint.transform.rotation.eulerAngles.x);
+        //Debug.Log("X: " + focalPoint.transform.rotation.eulerAngles.x);
 
         focalPoint.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
-        //transform.position = player.transform.position; // Move focal point with player
+        transform.position = player.transform.position; // Move focal point with player
     }
 }

@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip backgroundMusic;
     public AudioClip jumpSound;
     public ParticleSystem explosionParticle;
-    private int pickups;
+    private int pickups = 0;
     public UImanager _uiManager;
     private bool LevelComplete = true;
 
@@ -150,15 +150,18 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pickup"))
         {
             AddPickup();
+            Debug.Log("collide with pickup");
             explosionParticle.Play();
             Destroy(other.gameObject);
-            if (GameObject.FindGameObjectsWithTag("Pickup").Length <= 4)
+            if (GameObject.FindGameObjectsWithTag("Pickup").Length <= 3)
             {
                 if (GameObject.FindGameObjectsWithTag("Pickup").Length == 5)
                 {
                     LevelComplete = true;
+                    Debug.Log("level complete");
                 }
-                Destroy (GameObject.FindWithTag("Door"));
+                Debug.Log("door destroyer");
+                Destroy(GameObject.FindWithTag("Door"));
             }
         }
         if (other.gameObject.CompareTag("Goal") && LevelComplete == true)
