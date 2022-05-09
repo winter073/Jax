@@ -150,19 +150,22 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pickup"))
         {
             AddPickup();
-            Debug.Log("collide with pickup");
-            explosionParticle.Play();
+            //Debug.Log("collide with pickup");
+            //explosionParticle.Play();
             Destroy(other.gameObject);
             if (GameObject.FindGameObjectsWithTag("Pickup").Length <= 3)
             {
-                if (GameObject.FindGameObjectsWithTag("Pickup").Length == 5)
+                if (GameObject.FindGameObjectsWithTag("Pickup").Length == 0)
                 {
                     LevelComplete = true;
-                    Debug.Log("level complete");
+                    //Debug.Log("level complete");
                 }
-                Debug.Log("door destroyer");
-                Destroy(GameObject.FindWithTag("Door"));
+                //Debug.Log("door destroyer");
             }
+        }
+        if (other.gameObject.CompareTag("PickupAudio"))
+        {
+            other.transform.position = transform.position + new Vector3(0, -50, 0);
         }
         if (other.gameObject.CompareTag("Goal") && LevelComplete == true)
         {

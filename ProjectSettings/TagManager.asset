@@ -11,6 +11,7 @@ TagManager:
   - Door
   - SceneSwitch1
   - SceneSwitch2
+  - PickupAudio
   layers:
   - Default
   - TransparentFX

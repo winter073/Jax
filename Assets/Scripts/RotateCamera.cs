@@ -48,14 +48,14 @@ public class RotateCamera : MonoBehaviour
         {
             //Mouse Up
             transform.Rotate(1, 0, 0);
-            Debug.Log("LOOK UP");
+            //Debug.Log("LOOK UP");
 
         }
         if (Input.GetAxis("Mouse Y") < 0 && focalPoint.transform.rotation.eulerAngles.x > 10)
         {
             //Mouse Down
             transform.Rotate(-1, 0, 0);
-            Debug.Log("LOOK DOWN");
+            //Debug.Log("LOOK DOWN");
         }
         //Debug.Log("X: " + focalPoint.transform.rotation.eulerAngles.x);
 
